@@ -91,7 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .contact{background:#1A0A00;padding:60px 24px;text-align:center;color:white;}
 .contact .sec-label{color:#FF8C42;}.contact .sec-title{color:white;}.contact .sec-title span{color:#E8540A;}
 .cdesc2{color:rgba(255,255,255,0.45);font-size:0.84rem;margin-bottom:28px;}
-.cbtn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#E8540A,#FF6B9D);color:white;text-decoration:none;padding:15px 36px;border-radius:100px;font-size:0.9rem;font-weight:700;box-shadow:0 8px 26px rgba(232,84,10,0.36);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;}.cbtn:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(232,84,10,0.46);}
+.cbtn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#E8540A,#FF6B9D);color:white;text-decoration:none;padding:11px 26px;border-radius:100px;font-size:0.8rem;font-weight:700;box-shadow:0 6px 20px rgba(232,84,10,0.32);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;border:none;}.cbtn:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(232,84,10,0.42);}
 footer{background:#1A0A00;border-top:1px solid rgba(255,255,255,0.05);padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
 .fl{font-family:'Mochiy Pop One',sans-serif;color:#E8540A;font-size:0.82rem;letter-spacing:0.1em;}.fc{color:rgba(255,255,255,0.18);font-size:0.65rem;}
 @media(min-width:720px){
@@ -104,6 +104,16 @@ footer{background:#1A0A00;border-top:1px solid rgba(255,255,255,0.05);padding:18
   .contact{padding:88px 80px;}
   footer{padding:22px 80px;}
 }
+
+.cf-wrap{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:16px;text-align:left;align-items:center;}
+.cf-row{display:flex;flex-direction:column;gap:6px;}
+.cf-label{font-size:0.72rem;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:0.05em;}
+.cf-input{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:12px 16px;font-size:0.88rem;color:white;font-family:'Zen Maru Gothic',sans-serif;transition:border-color 0.2s,background 0.2s;outline:none;width:100%;}
+.cf-input::placeholder{color:rgba(255,255,255,0.3);}
+.cf-input:focus{border-color:#E8540A;background:rgba(255,255,255,0.12);}
+.cf-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FF8C42' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;}
+.cf-select option{background:#1A0A00;color:white;}
+.cf-textarea{min-height:120px;resize:vertical;line-height:1.7;}
 </style>
 </head>
 <body>
@@ -210,9 +220,36 @@ footer{background:#1A0A00;border-top:1px solid rgba(255,255,255,0.05);padding:18
 </section>
 <section class="contact" id="contact">
   <p class="sec-label">✦ GET IN TOUCH</p>
-  <h2 class="sec-title" style="margin-bottom:12px;">お仕事の<br><span>ご依頼・ご相談</span></h2>
-  <p class="cdesc2">まずはお気軽にメールください ✉️</p>
-  <a id="cbtn" class="cbtn">✉️ &nbsp;メールでお問い合わせ</a>
+  <h2 class="sec-title" style="margin-bottom:8px;">お仕事の<br><span>ご依頼・ご相談</span></h2>
+  <p class="cdesc2">内容を入力して送信ボタンを押すとメーラーが開きます ✉️</p>
+  <div class="cf-wrap">
+    <div class="cf-row">
+      <label class="cf-label">お名前</label>
+      <input class="cf-input" id="cf-name" type="text" placeholder="山田 花子">
+    </div>
+    <div class="cf-row">
+      <label class="cf-label">メールアドレス</label>
+      <input class="cf-input" id="cf-email" type="email" placeholder="example@gmail.com">
+    </div>
+    <div class="cf-row">
+      <label class="cf-label">ご相談内容</label>
+      <select class="cf-input cf-select" id="cf-type">
+        <option value="">選択してください</option>
+        <option value="LP・サイト制作">LP・サイト制作</option>
+        <option value="バナー・アイコン制作">バナー・アイコン制作</option>
+        <option value="メタ広告運用">メタ広告運用</option>
+        <option value="サロンボード運用">サロンボード運用</option>
+        <option value="美容サロンコンサル">美容サロンコンサル</option>
+        <option value="マーケティング支援">マーケティング支援</option>
+        <option value="その他">その他</option>
+      </select>
+    </div>
+    <div class="cf-row">
+      <label class="cf-label">本文</label>
+      <textarea class="cf-input cf-textarea" id="cf-body" placeholder="ご依頼の詳細・ご質問など、お気軽にどうぞ ✨"></textarea>
+    </div>
+    <button class="cbtn" id="cbtn">✉️ &nbsp;この内容で送信する</button>
+  </div>
 </section>
 <footer>
   <div class="fl">HITOMIRU</div>
@@ -291,9 +328,9 @@ window.addEventListener('load', function() {
   window.addEventListener('scroll',checkCount);
   setTimeout(checkCount,500);
 
-  // コンフェッティ
+  // フォーム送信 + コンフェッティ
   var cols=['#E8540A','#FF6B9D','#F4A623','#7C3AED','#FF8C42'];
-  cbtn.addEventListener('click',function(){
+  function shootConfetti(){
     for(var i=0;i<28;i++){
       (function(i){
         setTimeout(function(){
@@ -305,6 +342,21 @@ window.addEventListener('load', function() {
         },i*50);
       })(i);
     }
+  }
+  cbtn.addEventListener('click',function(){
+    var name = (document.getElementById('cf-name')||{value:''}).value;
+    var email = (document.getElementById('cf-email')||{value:''}).value;
+    var type = (document.getElementById('cf-type')||{value:''}).value;
+    var body = (document.getElementById('cf-body')||{value:''}).value;
+    var subject = type ? '[HITOMIRU] ' + type : '[HITOMIRU] お問い合わせ';
+    var bodyText = '';
+    if(name) bodyText += 'お名前: ' + name + '\n';
+    if(email) bodyText += 'メールアドレス: ' + email + '\n';
+    if(type) bodyText += 'ご相談内容: ' + type + '\n';
+    bodyText += '\n' + (body || '');
+    var addr = ['s','a','l','l','y','2','5','2','5','7','7','7','@','g','m','a','i','l','.','c','o','m'].join('');
+    window.location.href = 'mai'+'lto:'+addr+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(bodyText);
+    shootConfetti();
   });
 
 });
