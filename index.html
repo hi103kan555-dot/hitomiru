@@ -114,6 +114,73 @@ footer{background:#1A0A00;border-top:1px solid rgba(255,255,255,0.05);padding:18
 .cf-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FF8C42' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;}
 .cf-select option{background:#1A0A00;color:white;}
 .cf-textarea{min-height:120px;resize:vertical;line-height:1.7;}
+
+/* ===== HPB STRENGTH ===== */
+.hpb{background:#FFF8F0;padding:60px 24px;}
+.hpb-card{background:white;border-radius:24px;border:2px solid #E8540A;overflow:hidden;max-width:860px;margin:0 auto;}
+.hpb-stripe{height:6px;background:repeating-linear-gradient(90deg,#E8540A 0px,#E8540A 40px,#FF8C42 40px,#FF8C42 80px,#FFD4B8 80px,#FFD4B8 120px);}
+.hpb-body{padding:32px 32px 28px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;}
+.hpb-kicker{display:inline-flex;align-items:center;gap:6px;background:#FFF0E8;color:#E8540A;font-size:0.65rem;font-weight:700;letter-spacing:.15em;padding:4px 14px;border-radius:100px;margin-bottom:14px;text-transform:uppercase;}
+.hpb-title{font-family:'Mochiy Pop One',sans-serif;font-size:clamp(1.1rem,3.5vw,1.5rem);line-height:1.4;color:#1A0A00;margin-bottom:10px;}
+.hpb-title em{font-style:normal;color:#E8540A;}
+.hpb-desc{font-size:0.82rem;line-height:1.9;color:#8B6E5A;margin-bottom:18px;}
+.hpb-genres{display:flex;flex-wrap:wrap;gap:8px;}
+.hpb-genre{display:flex;align-items:center;gap:6px;background:#FFF0E8;border:1.5px solid #FFD4B8;border-radius:100px;padding:5px 14px;font-size:0.72rem;font-weight:700;color:#8B6E5A;}
+.hpb-genre::before{content:'';width:7px;height:7px;border-radius:50%;background:#E8540A;flex-shrink:0;}
+.hpb-bignum{text-align:center;flex-shrink:0;}
+.hpb-num{font-family:'Mochiy Pop One',sans-serif;font-size:5rem;color:#E8540A;line-height:1;}
+.hpb-num-label{font-size:0.6rem;font-weight:700;color:#C0927A;letter-spacing:.15em;text-transform:uppercase;margin-top:4px;}
+.hpb-free{background:#E8540A;padding:14px 32px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.hpb-free-text{font-size:0.8rem;font-weight:700;color:white;line-height:1.6;letter-spacing:.02em;}
+.hpb-free-text mark{background:rgba(255,255,255,.2);color:white;padding:1px 6px;border-radius:4px;}
+
+/* ===== PRICING ===== */
+.pricing{background:#FFF8F0;padding:60px 24px;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;margin-bottom:12px;max-width:860px;}
+.pc{background:white;border-radius:20px;padding:26px 20px 22px;border:2px solid rgba(232,84,10,.1);display:flex;flex-direction:column;position:relative;transition:transform .2s,box-shadow .2s;}
+.pc:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(232,84,10,.12);}
+.pc.star{background:#FFF8F4;border-color:#E8540A;}
+.pc-ribbon{position:absolute;top:-1px;left:18px;background:#E8540A;color:white;font-size:0.58rem;font-weight:700;letter-spacing:.12em;padding:4px 14px;border-radius:0 0 10px 10px;}
+.pc-icon{width:42px;height:42px;border-radius:50%;background:#FFF0E8;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:10px;flex-shrink:0;}
+.pc.star .pc-icon{margin-top:20px;}
+.pc-label{font-size:0.58rem;font-weight:700;letter-spacing:.2em;color:#E8540A;text-transform:uppercase;margin-bottom:4px;}
+.pc-name{font-family:'Mochiy Pop One',sans-serif;font-size:0.88rem;line-height:1.4;color:#1A0A00;margin-bottom:10px;}
+.pc-price{font-family:'Mochiy Pop One',sans-serif;font-size:1.8rem;color:#E8540A;line-height:1;margin-bottom:2px;}
+.pc-price small{font-size:0.78rem;color:#C0927A;font-family:'Zen Maru Gothic',sans-serif;font-weight:400;}
+.pc-tax{font-size:0.65rem;color:#C0927A;margin-bottom:6px;}
+.pc-hpb{background:#FFF0E8;border:1.5px dashed #E8540A;border-radius:8px;padding:7px 10px;font-size:0.68rem;font-weight:700;color:#E8540A;margin-bottom:12px;line-height:1.55;}
+.pc-sep{height:1px;background:rgba(232,84,10,.1);margin-bottom:12px;}
+.pc.star .pc-sep{background:rgba(232,84,10,.2);}
+.pc-list{list-style:none;font-size:0.72rem;color:#6B4F3F;line-height:2;flex:1;}
+.pc-list li{padding-left:14px;position:relative;}
+.pc-list li::before{content:'✦';position:absolute;left:0;color:#E8540A;font-size:0.5rem;top:7px;}
+.pc-note{font-size:0.62rem;color:#C0927A;margin-top:6px;line-height:1.6;}
+.pc-footer{margin-top:12px;padding-top:10px;border-top:1px solid rgba(232,84,10,.1);font-size:0.65rem;color:#E8540A;font-weight:700;letter-spacing:.04em;}
+.pc.star .pc-footer{border-color:rgba(232,84,10,.2);}
+.pricing-note{font-size:0.65rem;color:#C0927A;text-align:right;max-width:860px;}
+.pricing .sec-title span{color:#E8540A;}
+
+@media(min-width:720px){
+  .hpb{padding:88px 80px;}
+  .pricing{padding:88px 80px;}
+  .pricing-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:719px){
+  .hpb-body{grid-template-columns:1fr;}
+  .hpb-bignum{display:none;}
+  .hpb-free{padding:14px 20px;}
+  .pricing-grid{grid-template-columns:1fr;}
+}
+/* ===== FLOW ===== */
+.fl-step{display:grid;grid-template-columns:56px 1fr;column-gap:20px;align-items:start;}
+.fl-left{display:flex;flex-direction:column;align-items:center;}
+.fl-num{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#E8540A,#FF6B9D);color:white;font-family:'Mochiy Pop One',sans-serif;font-size:0.82rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 14px rgba(232,84,10,0.4);}
+.fl-line{width:2px;flex:1;min-height:20px;background:rgba(255,255,255,0.1);margin:6px auto 0;border-radius:2px;}
+.fl-body{padding-bottom:32px;padding-top:8px;}
+.fl-title{font-family:'Mochiy Pop One',sans-serif;font-size:0.88rem;color:white;margin-bottom:5px;}
+.fl-desc{font-size:0.76rem;color:rgba(255,255,255,0.45);line-height:1.85;}
+.fl-pill{display:inline-block;background:rgba(232,84,10,0.18);border:1px solid rgba(232,84,10,0.4);color:#FF8C42;font-size:0.65rem;font-weight:700;letter-spacing:.08em;padding:3px 12px;border-radius:100px;margin-top:8px;}
+@media(min-width:720px){#flow{padding:88px 80px;}}
 </style>
 </head>
 <body>
@@ -128,6 +195,7 @@ footer{background:#1A0A00;border-top:1px solid rgba(255,255,255,0.05);padding:18
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#works">Works</a></li>
+    <li><a href="hitomiru-pricing.html">Pricing</a></li>
     <li><a href="#community">Community</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -190,7 +258,7 @@ footer{background:#1A0A00;border-top:1px solid rgba(255,255,255,0.05);padding:18
 <section class="works" id="works">
   <p class="sec-label">✦ WORKS</p>
   <h2 class="sec-title">制作<span>実績</span></h2>
-  <p style="margin-bottom:24px;"><a href="hitomiru-works.html" style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#E8540A,#FF6B9D);color:white;text-decoration:none;padding:10px 24px;border-radius:100px;font-size:0.78rem;font-weight:700;box-shadow:0 4px 16px rgba(232,84,10,0.3);">✦ 実績一覧を見る →</a></p>
+  <p style="margin-bottom:24px;"><a href="https://hitomiru.netlify.app/hitomiru-works" style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#E8540A,#FF6B9D);color:white;text-decoration:none;padding:10px 24px;border-radius:100px;font-size:0.78rem;font-weight:700;box-shadow:0 4px 16px rgba(232,84,10,0.3);">✦ 実績一覧を見る →</a></p>
   <div class="wg">
     <div class="wc"><div class="wf wc1"></div><div class="wo"><div class="wt">美容サロン LP</div><div class="wtg">LANDING PAGE</div></div></div>
     <div class="wc"><div class="wf wc2"></div><div class="wo"><div class="wt">インスタバナー</div><div class="wtg">BANNER DESIGN</div></div></div>
@@ -200,6 +268,15 @@ footer{background:#1A0A00;border-top:1px solid rgba(255,255,255,0.05);padding:18
     <div class="wc"><div class="wf wc6"></div><div class="wo"><div class="wt">アイコン制作</div><div class="wtg">ICON DESIGN</div></div></div>
   </div>
 </section>
+
+<!-- ===== PRICING PAGE BANNER ===== -->
+<section style="background:#FFF8F0;padding:52px 24px;text-align:center;">
+  <p class="sec-label" style="text-align:center;margin-bottom:12px;">✦ PRICING &amp; STRENGTH</p>
+  <h2 style="font-family:'Mochiy Pop One',sans-serif;font-size:clamp(1.4rem,5vw,2.2rem);font-weight:900;line-height:1.2;text-align:center;margin-bottom:8px;">料金・<span style="color:#E8540A;">強み</span>・ご依頼の流れ</h2>
+  <p style="font-size:0.82rem;color:#8B6E5A;margin-bottom:28px;line-height:1.8;">元HPB営業×デザイナーだから実現できる、適正価格と業界知識。</p>
+  <a href="hitomiru-pricing.html" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#E8540A,#FF6B9D);color:white;text-decoration:none;padding:14px 32px;border-radius:100px;font-size:0.82rem;box-shadow:0 6px 20px rgba(232,84,10,0.35);transition:transform 0.2s,box-shadow 0.2s;">&nbsp;詳しく見る →</a>
+</section>
+
 <section class="community" id="community">
   <div class="ci">
     <div class="milu-center">
@@ -221,19 +298,19 @@ footer{background:#1A0A00;border-top:1px solid rgba(255,255,255,0.05);padding:18
 <section class="contact" id="contact">
   <p class="sec-label">✦ GET IN TOUCH</p>
   <h2 class="sec-title" style="margin-bottom:8px;">お仕事の<br><span>ご依頼・ご相談</span></h2>
-  <p class="cdesc2">内容を入力して送信ボタンを押すとメーラーが開きます ✉️</p>
-  <div class="cf-wrap">
+  <p class="cdesc2">内容を入力して送信してください ✉️</p>
+  <form class="cf-wrap" id="cf-form" action="https://formspree.io/f/mqegdkoj" method="POST">
     <div class="cf-row">
       <label class="cf-label">お名前</label>
-      <input class="cf-input" id="cf-name" type="text" placeholder="山田 花子">
+      <input class="cf-input" name="name" type="text" placeholder="山田 花子" required>
     </div>
     <div class="cf-row">
       <label class="cf-label">メールアドレス</label>
-      <input class="cf-input" id="cf-email" type="email" placeholder="example@gmail.com">
+      <input class="cf-input" name="email" type="email" placeholder="example@gmail.com" required>
     </div>
     <div class="cf-row">
       <label class="cf-label">ご相談内容</label>
-      <select class="cf-input cf-select" id="cf-type">
+      <select class="cf-input cf-select" name="type">
         <option value="">選択してください</option>
         <option value="LP・サイト制作">LP・サイト制作</option>
         <option value="バナー・アイコン制作">バナー・アイコン制作</option>
@@ -246,10 +323,10 @@ footer{background:#1A0A00;border-top:1px solid rgba(255,255,255,0.05);padding:18
     </div>
     <div class="cf-row">
       <label class="cf-label">本文</label>
-      <textarea class="cf-input cf-textarea" id="cf-body" placeholder="ご依頼の詳細・ご質問など、お気軽にどうぞ ✨"></textarea>
+      <textarea class="cf-input cf-textarea" name="message" placeholder="ご依頼の詳細・ご質問など、お気軽にどうぞ ✨" required></textarea>
     </div>
-    <button class="cbtn" id="cbtn">✉️ &nbsp;この内容で送信する</button>
-  </div>
+    <button class="cbtn" type="submit" id="cbtn">✉️ &nbsp;この内容で送信する</button>
+  </form>
 </section>
 <footer>
   <div class="fl">HITOMIRU</div>
@@ -277,7 +354,7 @@ window.addEventListener('load', function() {
     requestAnimationFrame(loopRing);
   }
   loopRing();
-  var hels=document.querySelectorAll('a,.sc,.wc,.tag,.btn,.cbtn,.milu-btn');
+  var hels=document.querySelectorAll('a,.sc,.wc,.tag,.btn,.cbtn,.milu-btn,.pc,.hpb-genre');
   for(var i=0;i<hels.length;i++){
     (function(el){
       el.addEventListener('mouseenter',function(){ dot.style.width='16px';dot.style.height='16px';ring.style.width='52px';ring.style.height='52px'; });
@@ -328,7 +405,7 @@ window.addEventListener('load', function() {
   window.addEventListener('scroll',checkCount);
   setTimeout(checkCount,500);
 
-  // フォーム送信 + コンフェッティ
+  // フォーム送信 + コンフェッティ (Formspree)
   var cols=['#E8540A','#FF6B9D','#F4A623','#7C3AED','#FF8C42'];
   function shootConfetti(){
     for(var i=0;i<28;i++){
@@ -343,21 +420,28 @@ window.addEventListener('load', function() {
       })(i);
     }
   }
-  cbtn.addEventListener('click',function(){
-    var name = (document.getElementById('cf-name')||{value:''}).value;
-    var email = (document.getElementById('cf-email')||{value:''}).value;
-    var type = (document.getElementById('cf-type')||{value:''}).value;
-    var body = (document.getElementById('cf-body')||{value:''}).value;
-    var subject = type ? '[HITOMIRU] ' + type : '[HITOMIRU] お問い合わせ';
-    var bodyText = '';
-    if(name) bodyText += 'お名前: ' + name + '\n';
-    if(email) bodyText += 'メールアドレス: ' + email + '\n';
-    if(type) bodyText += 'ご相談内容: ' + type + '\n';
-    bodyText += '\n' + (body || '');
-    var addr = ['s','a','l','l','y','2','5','2','5','7','7','7','@','g','m','a','i','l','.','c','o','m'].join('');
-    window.location.href = 'mai'+'lto:'+addr+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(bodyText);
-    shootConfetti();
-  });
+  var form = document.getElementById('cf-form');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch('https://formspree.io/f/mqegdkoj', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res){
+        if(res.ok){
+          shootConfetti();
+          form.reset();
+          alert('送信しました！\nお問い合わせありがとうございます✨\n通常2営業日以内にご返信します。');
+        } else {
+          alert('送信に失敗しました。時間をおいてもう一度お試しください。');
+        }
+      }).catch(function(){
+        alert('送信に失敗しました。時間をおいてもう一度お試しください。');
+      });
+    });
+  }
 
 });
 </script>

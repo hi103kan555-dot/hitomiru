@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>料金・強み・ご依頼の流れ | HITOMIRU</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Zen Maru Gothic',sans-serif;color:#1A0A00;overflow-x:hidden;background:#FFF8F0;}
+
+/* カーソル */
+#cur-dot{width:10px;height:10px;background:linear-gradient(135deg,#E8540A,#FF6B9D);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;top:0;left:0;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s;}
+#cur-ring{width:36px;height:36px;border:2px solid rgba(232,84,10,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;top:0;left:0;transform:translate(-50%,-50%);transition:top 0.1s ease,left 0.1s ease,width 0.2s,height 0.2s;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:6px 12px;background:rgba(255,248,240,0.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(232,84,10,0.1);}
+.logo{display:flex;align-items:center;gap:5px;text-decoration:none;flex-shrink:0;}
+.logo-dot{width:20px;height:20px;min-width:20px;background:linear-gradient(135deg,#E8540A,#FF6B9D);border-radius:5px;display:flex;align-items:center;justify-content:center;color:white;font-size:0.55rem;}
+.logo-name{font-family:'Mochiy Pop One',sans-serif;font-size:0.72rem;color:#1A0A00;letter-spacing:0.06em;display:block;}
+.logo-sub{font-size:0.36rem;color:#8B6E5A;letter-spacing:0.15em;text-transform:uppercase;display:block;}
+.nav-links{display:flex;gap:12px;list-style:none;flex-shrink:0;}
+.nav-links a{text-decoration:none;color:#8B6E5A;font-size:0.62rem;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;transition:color 0.2s;}
+.nav-links a:hover{color:#E8540A;}
+.nav-links a.active{color:#E8540A;font-weight:700;}
+
+/* COMMON */
+.sec-label{font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:#E8540A;margin-bottom:8px;font-family:'Mochiy Pop One',sans-serif;}
+.sec-title{font-family:'Mochiy Pop One',sans-serif;font-size:clamp(1.4rem,5vw,2.2rem);font-weight:900;line-height:1.2;margin-bottom:24px;}
+.sec-title span{color:#E8540A;}
+
+/* PAGE HERO */
+.page-hero{padding:100px 24px 52px;text-align:center;position:relative;overflow:hidden;}
+.bg-float{position:absolute;pointer-events:none;opacity:0.1;animation:bgfl 6s ease-in-out infinite;}
+.bg-float:nth-child(1){top:10%;left:5%;font-size:1.5rem;animation-delay:0s;}
+.bg-float:nth-child(2){top:20%;right:8%;font-size:2rem;animation-delay:1s;}
+.bg-float:nth-child(3){bottom:20%;left:6%;font-size:1.2rem;animation-delay:2s;}
+.bg-float:nth-child(4){bottom:15%;right:5%;font-size:1.6rem;animation-delay:0.8s;}
+@keyframes bgfl{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-16px) rotate(8deg);}}
+.page-hero-badge{display:inline-block;background:#E8540A;color:white;font-size:0.65rem;letter-spacing:0.1em;padding:5px 15px;border-radius:100px;margin-bottom:16px;}
+.page-hero-title{font-family:'Mochiy Pop One',sans-serif;font-size:clamp(1.6rem,5vw,2.4rem);line-height:1.3;color:#1A0A00;margin-bottom:12px;}
+.page-hero-title em{font-style:normal;color:#E8540A;}
+.page-hero-sub{font-size:0.84rem;line-height:1.9;color:#8B6E5A;max-width:480px;margin:0 auto 28px;}
+
+/* TAB NAV */
+.tab-nav{display:flex;justify-content:center;gap:8px;margin-bottom:0;padding:0 24px 0;}
+.tab-btn{text-decoration:none;display:inline-flex;align-items:center;gap:6px;background:white;border:2px solid rgba(232,84,10,0.2);color:#8B6E5A;padding:8px 20px;border-radius:100px;font-size:0.72rem;font-weight:700;font-family:'Mochiy Pop One',sans-serif;transition:all 0.2s;cursor:pointer;}
+.tab-btn:hover,.tab-btn.active{background:#E8540A;border-color:#E8540A;color:white;}
+
+/* ===== HPB STRENGTH ===== */
+.hpb{background:#FFF8F0;padding:60px 24px;}
+.hpb-card{background:white;border-radius:24px;border:2px solid #E8540A;overflow:hidden;max-width:860px;margin:0 auto;}
+.hpb-stripe{height:6px;background:repeating-linear-gradient(90deg,#E8540A 0px,#E8540A 40px,#FF8C42 40px,#FF8C42 80px,#FFD4B8 80px,#FFD4B8 120px);}
+.hpb-body{padding:32px 32px 28px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;}
+.hpb-kicker{display:inline-flex;align-items:center;gap:6px;background:#FFF0E8;color:#E8540A;font-size:0.65rem;font-weight:700;letter-spacing:.15em;padding:4px 14px;border-radius:100px;margin-bottom:14px;text-transform:uppercase;}
+.hpb-title{font-family:'Mochiy Pop One',sans-serif;font-size:clamp(1.1rem,3.5vw,1.5rem);line-height:1.4;color:#1A0A00;margin-bottom:10px;}
+.hpb-title em{font-style:normal;color:#E8540A;}
+.hpb-desc{font-size:0.82rem;line-height:1.9;color:#8B6E5A;margin-bottom:18px;}
+.hpb-genres{display:flex;flex-wrap:wrap;gap:8px;}
+.hpb-genre{display:flex;align-items:center;gap:6px;background:#FFF0E8;border:1.5px solid #FFD4B8;border-radius:100px;padding:5px 14px;font-size:0.72rem;font-weight:700;color:#8B6E5A;}
+.hpb-genre::before{content:'';width:7px;height:7px;border-radius:50%;background:#E8540A;flex-shrink:0;}
+.hpb-bignum{text-align:center;flex-shrink:0;}
+.hpb-num{font-family:'Mochiy Pop One',sans-serif;font-size:5rem;color:#E8540A;line-height:1;}
+.hpb-num-label{font-size:0.6rem;font-weight:700;color:#C0927A;letter-spacing:.15em;text-transform:uppercase;margin-top:4px;}
+.hpb-free{background:#E8540A;padding:14px 32px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.hpb-free-text{font-size:0.8rem;font-weight:700;color:white;line-height:1.6;letter-spacing:.02em;}
+.hpb-free-text mark{background:rgba(255,255,255,.2);color:white;padding:1px 6px;border-radius:4px;}
+
+/* ===== PRICING ===== */
+.pricing{background:#FFF8F0;padding:60px 24px;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;margin-bottom:12px;max-width:860px;}
+.pc{background:white;border-radius:20px;padding:26px 20px 22px;border:2px solid rgba(232,84,10,.1);display:flex;flex-direction:column;position:relative;transition:transform .2s,box-shadow .2s;}
+.pc:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(232,84,10,.12);}
+.pc.star{background:#FFF8F4;border-color:#E8540A;}
+.pc-ribbon{position:absolute;top:-1px;left:18px;background:#E8540A;color:white;font-size:0.58rem;font-weight:700;letter-spacing:.12em;padding:4px 14px;border-radius:0 0 10px 10px;}
+.pc-icon{width:42px;height:42px;border-radius:50%;background:#FFF0E8;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:10px;flex-shrink:0;}
+.pc.star .pc-icon{margin-top:20px;}
+.pc-label{font-size:0.58rem;font-weight:700;letter-spacing:.2em;color:#E8540A;text-transform:uppercase;margin-bottom:4px;}
+.pc-name{font-family:'Mochiy Pop One',sans-serif;font-size:0.88rem;line-height:1.4;color:#1A0A00;margin-bottom:10px;}
+.pc-price{font-family:'Mochiy Pop One',sans-serif;font-size:1.8rem;color:#E8540A;line-height:1;margin-bottom:2px;}
+.pc-price small{font-size:0.78rem;color:#C0927A;font-family:'Zen Maru Gothic',sans-serif;font-weight:400;}
+.pc-tax{font-size:0.65rem;color:#C0927A;margin-bottom:6px;}
+.pc-hpb{background:#FFF0E8;border:1.5px dashed #E8540A;border-radius:8px;padding:7px 10px;font-size:0.68rem;font-weight:700;color:#E8540A;margin-bottom:12px;line-height:1.55;}
+.pc-sep{height:1px;background:rgba(232,84,10,.1);margin-bottom:12px;}
+.pc.star .pc-sep{background:rgba(232,84,10,.2);}
+.pc-list{list-style:none;font-size:0.72rem;color:#6B4F3F;line-height:2;flex:1;}
+.pc-list li{padding-left:14px;position:relative;}
+.pc-list li::before{content:'✦';position:absolute;left:0;color:#E8540A;font-size:0.5rem;top:7px;}
+.pc-note{font-size:0.62rem;color:#C0927A;margin-top:6px;line-height:1.6;}
+.pc-footer{margin-top:12px;padding-top:10px;border-top:1px solid rgba(232,84,10,.1);font-size:0.65rem;color:#E8540A;font-weight:700;letter-spacing:.04em;}
+.pc.star .pc-footer{border-color:rgba(232,84,10,.2);}
+.pricing-note{font-size:0.65rem;color:#C0927A;text-align:right;max-width:860px;}
+
+/* ===== FLOW ===== */
+.fl-section{background:#1A0A00;padding:60px 24px;}
+.fl-step{display:grid;grid-template-columns:56px 1fr;column-gap:20px;align-items:start;}
+.fl-left{display:flex;flex-direction:column;align-items:center;}
+.fl-num{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#E8540A,#FF6B9D);color:white;font-family:'Mochiy Pop One',sans-serif;font-size:0.82rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 14px rgba(232,84,10,0.4);}
+.fl-line{width:2px;flex:1;min-height:20px;background:rgba(255,255,255,0.1);margin:6px auto 0;border-radius:2px;}
+.fl-body{padding-bottom:32px;padding-top:8px;}
+.fl-title{font-family:'Mochiy Pop One',sans-serif;font-size:0.88rem;color:white;margin-bottom:5px;}
+.fl-desc{font-size:0.76rem;color:rgba(255,255,255,0.45);line-height:1.85;}
+.fl-pill{display:inline-block;background:rgba(232,84,10,0.18);border:1px solid rgba(232,84,10,0.4);color:#FF8C42;font-size:0.65rem;font-weight:700;letter-spacing:.08em;padding:3px 12px;border-radius:100px;margin-top:8px;}
+
+/* btn */
+.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#E8540A,#FF6B9D);color:white;text-decoration:none;padding:13px 28px;border-radius:100px;font-size:0.82rem;font-weight:700;box-shadow:0 6px 20px rgba(232,84,10,0.35);transition:transform 0.2s,box-shadow 0.2s;}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(232,84,10,0.45);}
+.wv{animation:wv 1.5s ease-in-out infinite;display:inline-block;}
+@keyframes wv{0%,100%{transform:rotate(0)}30%{transform:rotate(18deg)}70%{transform:rotate(-8deg)}}
+
+/* FOOTER */
+footer{background:#1A0A00;border-top:1px solid rgba(255,255,255,0.05);padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+.fl-logo{font-family:'Mochiy Pop One',sans-serif;color:#E8540A;font-size:0.82rem;letter-spacing:0.1em;}
+.fc{color:rgba(255,255,255,0.18);font-size:0.65rem;}
+
+/* RESPONSIVE */
+@media(min-width:720px){
+  nav{padding:6px 48px;}.nav-links{gap:28px;}.nav-links a{font-size:0.72rem;}
+  .hpb{padding:88px 80px;}
+  .pricing{padding:88px 80px;}
+  .fl-section{padding:88px 80px;}
+  .page-hero{padding:120px 80px 60px;}
+}
+@media(max-width:719px){
+  .hpb-body{grid-template-columns:1fr;}
+  .hpb-bignum{display:none;}
+  .hpb-free{padding:14px 20px;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .tab-nav{flex-wrap:wrap;}
+}
+</style>
+</head>
+<body>
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-dot">✦</div>
+    <div><span class="logo-name">HITOMIRU</span><span class="logo-sub">Web Designer × AI</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#works">Works</a></li>
+    <li><a href="hitomiru-pricing.html" class="active">Pricing</a></li>
+    <li><a href="index.html#community">Community</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <span class="bg-float">💰</span>
+  <span class="bg-float">✨</span>
+  <span class="bg-float">💄</span>
+  <span class="bg-float">🎨</span>
+  <div class="page-hero-badge">✦ PRICING &amp; STRENGTH</div>
+  <h1 class="page-hero-title">料金・<em>強み</em>・<br>ご依頼の流れ</h1>
+  <p class="page-hero-sub">元HPB営業×デザイナーだから実現できる、<br>適正価格と売れるデザイン。</p>
+  <div class="tab-nav">
+    <a href="#strength" class="tab-btn">💄 強み</a>
+    <a href="#pricing" class="tab-btn">💰 料金プラン</a>
+    <a href="#flow" class="tab-btn">📋 ご依頼の流れ</a>
+  </div>
+</section>
+
+<!-- ===== STRENGTH ===== -->
+<section class="hpb" id="strength">
+  <div style="max-width:860px;margin:0 auto 32px;">
+    <p class="sec-label">✦ STRENGTH</p>
+    <h2 class="sec-title">美容業界を<span>知り尽くした</span><br>デザイナー</h2>
+  </div>
+  <div class="hpb-card">
+    <div class="hpb-stripe"></div>
+    <div class="hpb-body">
+      <div>
+        <div class="hpb-kicker">✦ 元 ホットペッパービューティー 営業</div>
+        <h3 class="hpb-title">美容業界の<em>相場と内側を知る</em><br>デザイナーだから、<br>適正価格で最高を届けられる。</h3>
+        <p class="hpb-desc">ホットペッパービューティーの営業として、全業種を担当した経験を持ちます。<br>サロンの集客課題・掲載戦略・クーポン設計・<strong>業界の料金相場</strong>を熟知しているからこそ、<br>"売れる"視点と適正価格を両立した提案ができます。</p>
+        <div class="hpb-genres">
+          <div class="hpb-genre">ヘアサロン</div>
+          <div class="hpb-genre">ネイルサロン</div>
+          <div class="hpb-genre">まつエク</div>
+          <div class="hpb-genre">エステ</div>
+          <div class="hpb-genre">リラクゼーション</div>
+        </div>
+      </div>
+      <div class="hpb-bignum">
+        <div class="hpb-num">5</div>
+        <div class="hpb-num-label">全業種<br>担当経験</div>
+      </div>
+    </div>
+    <div class="hpb-free">
+      <span style="font-size:1.1rem;flex-shrink:0;">🎁</span>
+      <div class="hpb-free-text"><mark>開業パック限定</mark> ホットペッパービューティーの運用方法を<strong>無料でレクチャー</strong>！掲載効果を最大化するノウハウをお伝えします。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section class="pricing" id="pricing">
+  <div style="max-width:860px;margin:0 auto;">
+    <p class="sec-label">✦ PRICING</p>
+    <h2 class="sec-title">料金<span>プラン</span></h2>
+    <p style="font-size:0.82rem;color:#8B6E5A;margin-bottom:0;line-height:1.8;">元HPB営業×デザイナーだから、<strong style="color:#E8540A;">業界相場を知ったうえで</strong>適正価格でご提供します ✦</p>
+  </div>
+  <div class="pricing-grid" style="margin:0 auto;margin-top:32px;margin-bottom:12px;">
+
+    <div class="pc">
+      <div class="pc-icon">🎨</div>
+      <p class="pc-label">LIGHT PACK</p>
+      <p class="pc-name">ライトパック</p>
+      <p class="pc-price">¥5,000<small>〜¥50,000</small></p>
+      <p class="pc-tax">税込 ¥5,500〜¥55,000　内容により変動</p>
+      <div class="pc-sep"></div>
+      <ul class="pc-list">
+        <li>CPバナー制作</li>
+        <li>インスタバナー制作</li>
+        <li>チラシデザイン</li>
+        <li>名刺デザイン</li>
+        <li>ステッカーデザイン</li>
+        <li>アイコン制作</li>
+      </ul>
+      <p class="pc-note">✦ 単品・複数枚など内容に応じてお見積もり</p>
+      <p class="pc-footer">✦ まず1点からお気軽にどうぞ</p>
+    </div>
+
+    <div class="pc">
+      <div class="pc-icon">📣</div>
+      <p class="pc-label">MAX PACK</p>
+      <p class="pc-name">集客最大化パック</p>
+      <p class="pc-price">¥250,000<small>〜</small></p>
+      <p class="pc-tax">税込 ¥275,000〜</p>
+      <div class="pc-sep"></div>
+      <ul class="pc-list">
+        <li>LP制作</li>
+        <li>メタ広告バナー 3種類</li>
+        <li>メタ広告運用（初期設定）</li>
+        <li>ターゲット・構成提案込み</li>
+      </ul>
+      <p class="pc-note">※ 更新運用費は別途ご相談<br>※ バラで依頼すると¥300,000〜の内容</p>
+      <p class="pc-footer">✦ 集客を仕組み化して売上UP</p>
+    </div>
+
+    <div class="pc star">
+      <div class="pc-ribbon">✦ おすすめ</div>
+      <div class="pc-icon">🏠</div>
+      <p class="pc-label">OPEN PACK</p>
+      <p class="pc-name">開業パック<br>美容サロン向け</p>
+      <p class="pc-price">¥330,000<small>〜</small></p>
+      <p class="pc-tax">税込 ¥363,000〜</p>
+      <div class="pc-hpb">🎁 HPB運用レクチャー 無料付き！<br>バラで頼むと¥500,000〜の内容</div>
+      <div class="pc-sep"></div>
+      <ul class="pc-list">
+        <li>ホームページ制作</li>
+        <li>チラシデザイン</li>
+        <li>名刺デザイン</li>
+        <li>ロゴ制作</li>
+        <li>店内POP制作</li>
+        <li>HPB運用レクチャー（無料）</li>
+      </ul>
+      <p class="pc-footer">✦ 開業準備をまるっとお任せ</p>
+    </div>
+
+  </div>
+  <p class="pricing-note" style="max-width:860px;margin:0 auto;">※ 金額はあくまで目安です。内容により変動します。まずはお気軽にご相談ください。</p>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="fl-section" id="flow">
+  <div style="max-width:860px;margin:0 auto;">
+    <p class="sec-label" style="color:#FF8C42;">✦ FLOW</p>
+    <h2 class="sec-title" style="color:white;">ご依頼の<span style="color:#E8540A;">流れ</span></h2>
+    <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);margin-bottom:44px;line-height:1.8;">お問い合わせから納品まで、丁寧にサポートします ✦</p>
+
+    <div style="display:flex;flex-direction:column;">
+
+      <div class="fl-step">
+        <div class="fl-left"><div class="fl-num">01</div><div class="fl-line"></div></div>
+        <div class="fl-body">
+          <p class="fl-title">お問い合わせ・ヒアリング</p>
+          <p class="fl-desc">フォームまたはDMからお気軽にご連絡ください。ご要望・ご予算・納期などをヒアリングします。</p>
+          <span class="fl-pill">1営業日以内に返信</span>
+        </div>
+      </div>
+
+      <div class="fl-step">
+        <div class="fl-left"><div class="fl-num">02</div><div class="fl-line"></div></div>
+        <div class="fl-body">
+          <p class="fl-title">お見積もり・ご提案</p>
+          <p class="fl-desc">ヒアリング内容をもとに最適なプランをご提案。内容・金額にご納得いただけたら正式にご依頼へ。</p>
+          <span class="fl-pill">無料</span>
+        </div>
+      </div>
+
+      <div class="fl-step">
+        <div class="fl-left"><div class="fl-num">03</div><div class="fl-line"></div></div>
+        <div class="fl-body">
+          <p class="fl-title">ご入金・制作開始</p>
+          <p class="fl-desc">ご契約後、着手金（50%）をお支払いいただき制作スタート。AIとFigmaをフル活用してスピーディに進行します。</p>
+          <span class="fl-pill">着手金 50%</span>
+        </div>
+      </div>
+
+      <div class="fl-step">
+        <div class="fl-left"><div class="fl-num">04</div><div class="fl-line"></div></div>
+        <div class="fl-body">
+          <p class="fl-title">初稿提出・修正対応</p>
+          <p class="fl-desc">初稿をご確認いただき、プランに応じた回数内で修正対応を行います。細かいご要望もお気軽にどうぞ。</p>
+          <span class="fl-pill">修正回数はプランによる</span>
+        </div>
+      </div>
+
+      <div class="fl-step">
+        <div class="fl-left"><div class="fl-num">05</div><div class="fl-line"></div></div>
+        <div class="fl-body">
+          <p class="fl-title">最終確認・納品</p>
+          <p class="fl-desc">最終確認をいただいたら残金（50%）をお支払いいただき、データをお渡しします。</p>
+          <span class="fl-pill">残金 50% → 納品</span>
+        </div>
+      </div>
+
+      <div class="fl-step">
+        <div class="fl-left"><div class="fl-num">06</div><div class="fl-line" style="background:transparent;"></div></div>
+        <div class="fl-body" style="padding-bottom:0;">
+          <p class="fl-title">アフターサポート</p>
+          <p class="fl-desc">納品後の軽微な修正や運用のご相談も承ります。継続的なお付き合いも大歓迎です。</p>
+          <span class="fl-pill">別途ご相談</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:52px;">
+      <a href="index.html#contact" class="btn"><span class="wv">👋</span> &nbsp;まずはご相談してみる</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl-logo">HITOMIRU</div>
+  <div class="fc">© 2025 HITOMIRU / ひーさん. All rights reserved.</div>
+</footer>
+
+<script>
+window.addEventListener('load', function() {
+  var dot = document.getElementById('cur-dot');
+  var ring = document.getElementById('cur-ring');
+  var mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove', function(e) {
+    mx=e.clientX; my=e.clientY;
+    dot.style.left=mx+'px'; dot.style.top=my+'px';
+  });
+  function loopRing() {
+    rx+=(mx-rx)*0.15; ry+=(my-ry)*0.15;
+    ring.style.left=rx+'px'; ring.style.top=ry+'px';
+    requestAnimationFrame(loopRing);
+  }
+  loopRing();
+  var hels=document.querySelectorAll('a,.tab-btn,.pc,.hpb-genre,.btn');
+  for(var i=0;i<hels.length;i++){
+    (function(el){
+      el.addEventListener('mouseenter',function(){ dot.style.width='16px';dot.style.height='16px';ring.style.width='52px';ring.style.height='52px'; });
+      el.addEventListener('mouseleave',function(){ dot.style.width='10px';dot.style.height='10px';ring.style.width='36px';ring.style.height='36px'; });
+    })(hels[i]);
+  }
+  // マウスパーティクル
+  var ems=['✨','⭐','🌸','💫','🎨'];
+  document.addEventListener('mousemove', function(e) {
+    if(Math.random()>0.88){
+      var p=document.createElement('span');
+      p.textContent=ems[Math.floor(Math.random()*ems.length)];
+      p.style.cssText='position:fixed;pointer-events:none;z-index:9997;font-size:'+(Math.random()*10+8)+'px;left:'+e.clientX+'px;top:'+e.clientY+'px;transform:translate(-50%,-50%);opacity:1;transition:all 0.7s ease;';
+      document.body.appendChild(p);
+      setTimeout(function(){ p.style.opacity='0'; p.style.top=(e.clientY-60)+'px'; },30);
+      setTimeout(function(){ if(p.parentNode) p.parentNode.removeChild(p); },750);
+    }
+  });
+});
+</script>
+</body>
+</html>
